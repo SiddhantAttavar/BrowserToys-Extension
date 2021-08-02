@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Edge Customizer",
+  "description": "Provides various browser scripts",
+  "version": "1",
+  "permissions": ["tabs", "declarativeContent"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
+      "js": ["autoconfirm.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "incognito": "split",
+  "browser_action": {
+    "default_title": "Edge Customizer"
+  },
+  "icons": {"128": "icon.png"},
+  "commands": {
+    "new-tab-here": {
+      "suggested_key": {
+        "default": "Ctrl+T",
+        "mac": "MacCtrl+T"
+      },
+      "description": "Open a new tab next to the current one"
+    }
+  }
+}
