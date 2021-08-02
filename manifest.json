@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "name": "Edge Customizer",
+  "name": "BrowserToys",
   "description": "Provides various browser scripts",
   "version": "1",
   "permissions": ["tabs", "declarativeContent"],
@@ -16,7 +16,7 @@
   ],
   "incognito": "split",
   "browser_action": {
-    "default_title": "Edge Customizer"
+    "default_title": "BrowserToys"
   },
   "icons": {"128": "icon.png"},
   "commands": {
