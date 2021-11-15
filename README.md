@@ -1,5 +1,5 @@
 # BrowserToys-Extension
-A browser extension that contains many tools to help you while browsing and extend the functionality of your browser. It runs on any browser that supports the [WebExtensions API](https://developer.mozilla.org/en-US/Add-ons/WebExtensions) (i.e. pretty much every Chromium browser). The name for this extension was inspired from [Microsoft Powertoys](https://github.com/microsoft/PowerToys) which povides many useful tools for power users.
+A browser extension that contains many tools to help you while browsing and extend the functionality of your browser. It runs on any browser that supports the [Extensions API](https://developer.chrome.com/docs/extensions/reference/) (i.e. pretty much every Chromium browser). The name for this extension was inspired from [Microsoft Powertoys](https://github.com/microsoft/PowerToys) which povides many useful tools for power users.
 
 This extension adds the following features to your browser:
  - Creates a new tab to the immediate right of the current tab and in the same tab group when using Ctrl+T
