@@ -2,17 +2,17 @@
 	"manifest_version": 2,
 	"name": "BrowserToys",
 	"description": "Provides various browser scripts",
-	"version": "1.0.0",
+	"version": "1",
 	"permissions": ["tabs", "declarativeContent", "activeTab"],
 	"background": {
 		"scripts": ["background.js"]
 	},
-	"content_scrpts": [
-	{
-		"matches": ["<all_urls>"],
-		"js": ["xkcdReplace.js"],
-		"exclude_globs": [ "*options*"]
-	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["xkcdReplace.js"],
+			"exclude_globs": ["*options*"]
+		},
 		{
 			"matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
 			"js": ["autoconfirm.js"],
@@ -21,6 +21,7 @@
 	],
 	"incognito": "split",
 	"browser_action": {
+		"default_icon": "icon.png",
 		"default_title": "BrowserToys"
 	},
 	"icons": {"128": "icon.png"},
@@ -34,4 +35,4 @@
 		}
 	}
 }
-i
+
