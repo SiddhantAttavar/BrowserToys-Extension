@@ -12,7 +12,7 @@ This extension adds the following features to your browser:
  - Drag and drop the file onto the page
  - Restart the browser
 
-You may get a warning that the extension is disabled. To remove this warning, do the following:
+You may get a warning on Windows saying that the extension is disabled. To remove this warning, do the following:
  - Go to the `chrome://extensions` page
  - Navigate to the extension page
  - Copy the extension ID
