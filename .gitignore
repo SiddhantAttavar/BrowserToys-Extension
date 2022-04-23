@@ -1,0 +1,3 @@
+# Firefox packaging related files and folders
+.web-extension-id
+web-ext-artifacts
