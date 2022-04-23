@@ -1,23 +1,45 @@
 /**
- * Called when the user uses the keyboard shortcut for
- * creating a new tab (usually Ctrl+Tab/Cmd+Tab)
+ * Called when the user creates a new tab (usually Ctrl+Tab/Cmd+Tab)
  */
-chrome.commands.onCommand.addListener(function (command) {
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-		// Sanity check for whether there are tabs
-		if (!tabs[0]) {
+var activeTab = null;
+
+chrome.tabs.onMoved.addListener(function () {
+	chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+		activeTab = tabs[0];
+	});
+});
+
+chrome.tabs.onActivated.addListener(function (activeInfo) {
+	chrome.tabs.get(activeInfo.tabId, function (tabInfo) {
+		activeTab = tabInfo;
+	});
+});
+
+chrome.tabs.onCreated.addListener(function (newTab) {
+	// Sanity check for whether there are tabs
+	if (!activeTab) {
+		return;
+	}
+	
+	if (newTab.windowId != activeTab.windowId) {
+		return;
+	}
+	
+	var targetIndex = activeTab.index + 1;
+	
+	if (newTab.index == targetIndex) {
+		return;
+	}
+	
+	chrome.windows.getCurrent({'populate': true}, function (window) {
+		if (newTab.index != window.tabs.length - 1) {
 			return;
 		}
-
-		// Create new tab to the right of current one (index is 1 greater)
-		var createOpts = {};
-		createOpts.index = tabs[0].index + 1;
-		createOpts.openerTabId = tabs[0].id;
-		chrome.tabs.create(createOpts, (createdTab) => {
-			// Add the newly created tab to the same tab group
-			if (tabs[0].groupId >= 0) {
+		
+		chrome.tabs.move(newTab.id, {index: targetIndex}, function (tab) {
+			if (activeTab.groupId >= 0) {
 				var groupOpts = {};
-				groupOpts.groupId = tabs[0].groupId;
+				groupOpts.groupId = activeTab.groupId;
 				groupOpts.tabIds = createdTab.id;
 				chrome.tabs.group(groupOpts);
 			}
