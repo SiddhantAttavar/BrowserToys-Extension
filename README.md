@@ -22,6 +22,7 @@ You may get a warning on Windows saying that the extension is disabled. To remov
  - Close regedit.msc and restart the browser
 
 ## Firefox:
+You can find the firefox extension [here](https://addons.mozilla.org/en-US/firefox/addon/browsertoys/). Alternatively you can:
  - Download the `BrowserToys-Extensions.xpi` file from the [release page](https://github.com/SiddhantAttavar/BrowserToys-Extension/releases)
  - Open the browser and go to `about:addons`
  - Click the settings button and select `Install Add-on From File`
