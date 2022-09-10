@@ -3,7 +3,7 @@
 	"name": "BrowserToys",
 	"description": "Provides various browser scripts",
 	"version": "1",
-	"permissions": ["tabs", "declarativeContent", "activeTab", "browserSettings"],
+	"permissions": [],
 	"background": {
 		"scripts": ["background.js"]
 	},
@@ -11,7 +11,10 @@
 		{
 			"matches": ["<all_urls>"],
 			"js": ["xkcdReplace.js"],
-			"exclude_globs": ["*options*"]
+			"exclude_globs": ["*options*"],
+			"exclude_matches": [
+				"*://*.linkedin.com/*"
+			]
 		},
 		{
 			"matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
@@ -20,7 +23,7 @@
 		}
 	],
 	"browser_action": {
-		"default_icon": "icon.png",
+		"default_icon": "icon.svg",
 		"default_title": "BrowserToys"
 	},
 	"icons": {"128": "icon.png"}
