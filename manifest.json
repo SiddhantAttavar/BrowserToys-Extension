@@ -9,14 +9,6 @@
 	},
 	"content_scripts": [
 		{
-			"matches": ["<all_urls>"],
-			"js": ["xkcdReplace.js"],
-			"exclude_globs": ["*options*"],
-			"exclude_matches": [
-				"*://*.linkedin.com/*"
-			]
-		},
-		{
 			"matches": ["https://www.youtube.com/*", "https://music.youtube.com/*"],
 			"js": ["autoconfirm.js"],
 			"run_at": "document_end"
