@@ -4,7 +4,6 @@ A browser extension that contains many tools to help you while browsing and exte
 This extension adds the following features to your browser:
  - Creates a new tab to the immediate right of the current tab and in the same tab group when using Ctrl+T
  - Autoconfirms the `Video paused. Continue watching?` message when using Youtube or Youtube Music (Original source code from [YoutubeNonStop](https://github.com/lawfx/YoutubeNonStop))
- - Replaces every mention of `"plane"` in a webpage with `"spider"`. Inspired by [r/xkcd](https://www.reddit.com/r/xkcd/) reaction to the [What if 2 countdown](https://munvoseli.github.io/xkcd-countdown/)
 
 # How to install:
 ## Chromium:
